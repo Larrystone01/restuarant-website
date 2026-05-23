@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ember & Oak — Modern Nigerian Grill</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="#home" class="nav-logo">Ember<span>&</span>Oak</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Reserve a Table</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero-text">
+        <span class="hero-badge">🔥 Open Daily 11am – 11pm</span>
+        <h1>Where <em>Fire</em> Meets Flavour</h1>
+        <p>
+          Slow-grilled meats, bold spices, and honest Nigerian cooking. Every
+          dish is made to share, made to remember.
+        </p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn-primary">View Our Menu</a>
+          <a href="#contact" class="btn-outline">Book a Table</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">12+</div>
+            <div class="stat-label">Years serving Lagos</div>
+          </div>
+          <div>
+            <div class="stat-num">4.9★</div>
+            <div class="stat-label">Google rating</div>
+          </div>
+          <div>
+            <div class="stat-num">200+</div>
+            <div class="stat-label">Happy guests weekly</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!--
+      HERO IMAGE: Real Nigerian beef suya skewers
+      Primary: foodfidelity.com (recipe/food blog, freely embeddable)
+      Fallback: Unsplash grilled skewers (photo-PpHXk5lH_Uk by Tengyart)
+    -->
+        <img
+          id="heroImg"
+          src="https://www.foodfidelity.com/wp-content/uploads/2020/06/nigerian-suya-1.jpg"
+          alt="Spicy Nigerian beef suya skewers on a charcoal grill"
+          onerror="
+            this.onerror = null;
+            this.src =
+              'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&q=80&auto=format&fit=crop';
+          "
+        />
+        <div class="hero-img-overlay">
+          <span style="font-size: 1.2rem">⭐</span>
+          <div>
+            <div class="rating-num">4.9 / 5</div>
+            <div class="rating-sub">1,200+ reviews</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="section-label">What We Serve</div>
+      <h2 class="section-title">Our Most-Loved Dishes</h2>
+      <p class="section-sub">
+        From street-style favourites to refined grill platters — built on real
+        ingredients and zero shortcuts.
+      </p>
+
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="grill">Grill</button>
+        <button class="tab-btn" data-filter="soup">Soups & Stews</button>
+        <button class="tab-btn" data-filter="sides">Sides</button>
+        <button class="tab-btn" data-filter="drinks">Drinks</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- 1. SUYA PLATTER
+         Real image: Nigerian suya recipe page (foodfidelity.com)
+         Fallback: Unsplash skewers PpHXk5lH_Uk -->
+        <div class="menu-card" data-cat="grill">
+          <img
+            class="menu-card-img"
+            src="https://www.foodfidelity.com/wp-content/uploads/2020/06/nigerian-suya-featured.jpg"
+            alt="Nigerian ember suya beef skewers with yaji spice"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=640&q=80&auto=format&fit=crop';
+            "
+          />
+          <div class="menu-card-body">
+            <div class="menu-tag">Grill</div>
+            <div class="menu-card-name">Ember Suya Platter</div>
+            <div class="menu-card-desc">
+              Tender beef skewers rubbed in our house yaji spice blend, grilled
+              over hardwood coals. Served with fresh onions and tomatoes.
+            </div>
+            <div class="menu-card-footer">
+              <span class="menu-price">₦4,500</span>
+              <button class="menu-order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. SMOKED CHICKEN
+         Real image: African spiced whole chicken (africanbites.com)
+         Fallback: Unsplash roast chicken 1640777 -->
+        <div class="menu-card" data-cat="grill">
+          <img
+            class="menu-card-img"
+            src="https://www.africanbites.com/wp-content/uploads/2014/08/IMG_4571-2.jpg"
+            alt="Oak-smoked whole African spiced chicken"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=640&q=80&auto=format&fit=crop';
+            "
+          />
+          <div class="menu-card-body">
+            <div class="menu-tag">Grill</div>
+            <div class="menu-card-name">Oak-Smoked Whole Chicken</div>
+            <div class="menu-card-desc">
+              Marinated 24 hours in citrus and native spices, slow-roasted on
+              the wood fire grill until deeply golden.
+            </div>
+            <div class="menu-card-footer">
+              <span class="menu-price">₦8,200</span>
+              <button class="menu-order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. CATFISH PEPPER SOUP
+         Real image: sisijemimah.com Nigerian pepper soup
+         Fallback: Unsplash dark bowl soup -->
+        <div class="menu-card" data-cat="soup">
+          <img
+            class="menu-card-img"
+            src="https://www.sisijemimah.com/wp-content/uploads/2019/04/catfish-peppersoup.jpg"
+            alt="Nigerian catfish pepper soup in earthen bowl"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'https://images.unsplash.com/photo-1547592180-85f173990554?w=640&q=80&auto=format&fit=crop';
+            "
+          />
+          <div class="menu-card-body">
+            <div class="menu-tag">Soups & Stews</div>
+            <div class="menu-card-name">Catfish Pepper Soup</div>
+            <div class="menu-card-desc">
+              Rich, aromatic broth with fresh catfish, utazi leaves, and our
+              signature pepper blend. A Lagos classic done right.
+            </div>
+            <div class="menu-card-footer">
+              <span class="menu-price">₦5,800</span>
+              <button class="menu-order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. OFE ONUGBU / EGUSI SOUP
+         Real image: Unsplash photo-1604329760661 (Nigerian green vegetable soup, Femoree)
+         This is a real Unsplash free-to-use photo -->
+        <div class="menu-card" data-cat="soup">
+          <img
+            class="menu-card-img"
+            src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?fm=jpg&q=75&w=640&auto=format&fit=crop"
+            alt="Nigerian bitterleaf oxtail soup"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'https://images.unsplash.com/photo-1574484284002-952d92456975?w=640&q=80&auto=format&fit=crop';
+            "
+          />
+          <div class="menu-card-body">
+            <div class="menu-tag">Soups & Stews</div>
+            <div class="menu-card-name">Ofe Onugbu & Oxtail</div>
+            <div class="menu-card-desc">
+              Bitterleaf soup slow-cooked with tender oxtail, cocoyam and
+              crayfish. Served with eba or pounded yam.
+            </div>
+            <div class="menu-card-footer">
+              <span class="menu-price">₦6,500</span>
+              <button class="menu-order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. PARTY JOLLOF RICE
+         Real image: Unsplash photo-1665332195309 (Nigerian jollof rice plate, Keesha's Kitchen)
+         Real free-to-use Nigerian food photo on Unsplash -->
+        <div class="menu-card" data-cat="sides">
+          <img
+            class="menu-card-img"
+            src="https://images.unsplash.com/photo-1665332195309-9d75071138f0?fm=jpg&q=75&w=640&auto=format&fit=crop"
+            alt="Smoky Nigerian party jollof rice"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=640&q=80&auto=format&fit=crop';
+            "
+          />
+          <div class="menu-card-body">
+            <div class="menu-tag">Sides</div>
+            <div class="menu-card-name">Party Jollof Rice</div>
+            <div class="menu-card-desc">
+              Firewood-cooked, smoky and perfectly seasoned. The benchmark all
+              other jollof is measured against.
+            </div>
+            <div class="menu-card-footer">
+              <span class="menu-price">₦2,800</span>
+              <button class="menu-order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. CHILLED ZOBO
+         Real image: dashofjazz.com zobo hibiscus drink recipe photo
+         Fallback: Unsplash hibiscus drink -->
+        <div class="menu-card" data-cat="drinks">
+          <img
+            class="menu-card-img"
+            src="https://www.dashofjazz.com/wp-content/uploads/2020/07/zobo-drink-nigerian-hibiscus-2.jpg"
+            alt="Chilled Nigerian zobo hibiscus drink in glass"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=640&q=80&auto=format&fit=crop';
+            "
+          />
+          <div class="menu-card-body">
+            <div class="menu-tag">Drinks</div>
+            <div class="menu-card-name">Chilled Zobo Hibiscus</div>
+            <div class="menu-card-desc">
+              House-brewed hibiscus flower tea with ginger, cloves and a hint of
+              pineapple. Naturally sweetened. Served cold.
+            </div>
+            <div class="menu-card-footer">
+              <span class="menu-price">₦1,200</span>
+              <button class="menu-order-btn">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-img-wrap">
+        <!--
+      Real image: Nigerian jollof rice with fried chicken by Dr Muhammad Amer
+      Unsplash photo-1603496987674 — free to use, no attribution required
+    -->
+        <img
+          src="https://images.unsplash.com/photo-1603496987674-79600a000f55?fm=jpg&q=80&w=800&auto=format&fit=crop"
+          alt="Nigerian jollof rice and grilled chicken plated beautifully"
+          onerror="
+            this.onerror = null;
+            this.src =
+              'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format&fit=crop';
+          "
+        />
+        <div class="about-floater">
+          <span class="floater-num">2012</span>
+          <span class="floater-label">Est. Lagos, Nigeria</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Built on Fire, Flavour & Family</h2>
+        <p class="section-sub">
+          Ember & Oak started as a backyard grill in Surulere. Twelve years
+          later, we still cook with the same wood fire and the same obsession
+          with flavour.
+        </p>
+
+        <div class="about-reasons">
+          <div class="reason-item">
+            <div class="reason-icon">🔥</div>
+            <div class="reason-text">
+              <h4>Real Hardwood, Every Day</h4>
+              <p>
+                No gas shortcuts. Every protein grills over seasoned hardwood
+                and African oak for that irreplaceable smoky depth.
+              </p>
+            </div>
+          </div>
+          <div class="reason-item">
+            <div class="reason-icon">🌿</div>
+            <div class="reason-text">
+              <h4>Sourced Locally, Weekly</h4>
+              <p>
+                We buy direct from markets and farms across Lagos and Ogun
+                State. Fresh ingredients arrive three times a week — no
+                freezing.
+              </p>
+            </div>
+          </div>
+          <div class="reason-item">
+            <div class="reason-icon">👨‍🍳</div>
+            <div class="reason-text">
+              <h4>Cooks Who Care</h4>
+              <p>
+                Our team of 8 cooks has an average of 9 years in the kitchen.
+                They know Nigerian flavour from memory, not from a recipe card.
+              </p>
+            </div>
+          </div>
+          <div class="reason-item">
+            <div class="reason-icon">🏡</div>
+            <div class="reason-text">
+              <h4>A Space That Feels Like Home</h4>
+              <p>
+                Private dining alcoves, open-air courtyard seating and a warm,
+                unhurried atmosphere — because the best meals take time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <div id="contact">
+      <div>
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Reserve Your Table or Send Us a Message</h2>
+        <p class="section-sub">
+          Walk-ins welcome, but a reservation guarantees your favourite spot. We
+          reply within 2 hours.
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="c-icon">📍</div>
+            <div>
+              <div class="c-label">Address</div>
+              <div class="c-value">14 Bournmouth Road, Surulere, Lagos</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">📞</div>
+            <div>
+              <div class="c-label">Phone / WhatsApp</div>
+              <div class="c-value">+234 812 345 6789</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">🕐</div>
+            <div>
+              <div class="c-label">Opening Hours</div>
+              <div class="c-value">Daily · 11:00am – 11:00pm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Your full name" required />
+        <input type="email" placeholder="Email address" required />
+        <input type="tel" placeholder="Phone number" />
+        <select>
+          <option value="" disabled selected>Party size</option>
+          <option>1 – 2 guests</option>
+          <option>3 – 4 guests</option>
+          <option>5 – 8 guests</option>
+          <option>9+ guests (private dining)</option>
+        </select>
+        <input type="date" />
+        <textarea placeholder="Any special requests or questions?"></textarea>
+        <button type="submit" class="btn-primary">Reserve My Table →</button>
+      </form>
+    </div>
+
+    <footer>
+      <p>
+        © 2025 <span>Ember & Oak</span> · All rights reserved · Made with 🔥 in
+        Lagos
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
