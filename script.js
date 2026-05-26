@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Order Now — WhatsApp redirect with prefilled message */
-  const WHATSAPP_NUMBER = "08139275222"; // Replace with real number (no + or spaces)
+  const WHATSAPP_NUMBER = "2348139275222"; // Replace with real number (no + or spaces)
 
   document.getElementById("menuGrid").addEventListener("click", (e) => {
     const btn = e.target.closest(".menu-order-btn");
